@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h1>Todo List</h1>
+<br><br>
+
+<div class="form-group">
+    <form method="post">{% csrf_token %}
+        {{ form|crispy }}
+        <br>
+        <button type="submit" class="btn btn-primary">Insert</button>
+    </form>
+</div>
+<br>
+{% for item in query %}
+    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+        <div class="card-header"><a class="link-dark" href="#">{{ item.category }}</a></div>
+        <div class="card-body">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">{{ item.created }}</p>
+        </div>
+    </div>
+    <br>
+{% endfor %}
+
+{% endblock content %}
