@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from task.models import TodoTask, Category
 from task.forms import TaskCreateForm
+from django.views.generic import DetailView
+from django.shortcuts import get_object_or_404,redirect
+
 
 def show_task(request):
     query = TodoTask.objects.all().order_by('created')
@@ -20,3 +23,12 @@ def show_task(request):
     }
 
     return render(request, 'task/index.html', dic)
+
+class TaskDetail(DetailView):
+    model = TodoTask
+    template_name = 'task/detail.html'
+
+def delete_task(request, id):
+    task = get_object_or_404(TodoTask, id=id)
+    task.delete()
+    return redirect('show_task')

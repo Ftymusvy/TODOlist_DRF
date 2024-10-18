@@ -16,7 +16,7 @@
 <br>
 {% for item in query %}
     <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-        <div class="card-header"><a class="link-dark" href="#">{{ item.category }}</a></div>
+        <div class="card-header"><a class="link-dark" href="{% url 'task_detail' item.pk %}">{{ item.category }}</a></div>
         <div class="card-body">
             <h5 class="card-title">{{ item.title }}</h5>
             <p class="card-text">{{ item.created }}</p>
