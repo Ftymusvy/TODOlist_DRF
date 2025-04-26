@@ -3,7 +3,6 @@
 یک اپلیکیشن ساده وب برای مدیریت کارها (Todo List) که با معماری API-محور توسعه داده شده است. بک‌اند با استفاده از Django پیاده‌سازی شده و APIهای لازم را برای فرانت‌اند فراهم می‌کند.
 
 ![تصویر اپلیکیشن Todo List](https://github.com/Ftymusvy/TODOlist_DRF/blob/main/main.png)
-
 ![تصویر اپلیکیشن Todo List](https://github.com/Ftymusvy/TODOlist_DRF/blob/main/detail.png)
 ## قابلیت‌ها
 
